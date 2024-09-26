@@ -1,0 +1,9 @@
+{% extends "admin/base_site.html" %}
+
+{% block content %}
+  <h2>Informe de ventas</h2>
+  <form method="get">
+      {{ form.as_p }}
+      <button type="submit" class="button">Generar informe en PDF</button>
+  </form>
+{% endblock %}
