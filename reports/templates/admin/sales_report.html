@@ -2,8 +2,42 @@
 
 {% block content %}
   <h2>Informe de ventas</h2>
+
+  <!-- Formulario de filtro por fechas -->
   <form method="get">
       {{ form.as_p }}
       <button type="submit" class="button">Generar informe en PDF</button>
   </form>
+
+  <!-- Mostrar estadísticas de ventas si existen -->
+  {% if orders %}
+      <h3>Estadísticas de ventas del {{ start_date }} al {{ end_date }}</h3>
+      <ul>
+          <li><strong>Total de ventas:</strong> ${{ total_sales }}</li>
+          <li><strong>Total de órdenes:</strong> {{ total_orders }}</li>
+          <li><strong>Venta promedio por pedido:</strong> ${{ avg_sales_per_order }}</li>
+      </ul>
+
+      <h4>Ventas por producto:</h4>
+      <table>
+          <thead>
+              <tr>
+                  <th>Producto</th>
+                  <th>Cantidad vendida</th>
+                  <th>Total vendido</th>
+              </tr>
+          </thead>
+          <tbody>
+              {% for item in product_sales %}
+              <tr>
+                  <td>{{ item.product__name }}</td>
+                  <td>{{ item.total_quantity }}</td>
+                  <td>${{ item.total_sales }}</td>
+              </tr>
+              {% endfor %}
+          </tbody>
+      </table>
+  {% else %}
+      <p>No se encontraron pedidos para las fechas seleccionadas.</p>
+  {% endif %}
 {% endblock %}
