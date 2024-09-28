@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Estadísticas de Ventas</title>
+</head>
+<body>
+    <h1>Estadísticas de Ventas</h1>
+    
+    <!-- Formulario de selección de fechas -->
+    <form method="GET">
+        {{ form.as_p }}
+        <button type="submit">Generar reporte</button>
+    </form>
+
+    {% if orders %}
+        <h2>Resumen de ventas del {{ start_date.date }} al {{ end_date.date }}</h2>
+        <p><strong>Total de ventas:</strong> ${{ total_sales|floatformat:2 }}</p>
+        <p><strong>Total de órdenes:</strong> {{ total_orders }}</p>
+        <p><strong>Venta promedio por pedido:</strong> ${{ avg_sales_per_order|floatformat:2 }}</p>
+
+        <h3>Ventas por Producto</h3>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Cantidad Vendida</th>
+                    <th>Total Vendido</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in product_sales %}
+                <tr>
+                    <td>{{ product.product__name }}</td>
+                    <td>{{ product.total_quantity }}</td>
+                    <td>${{ product.total_sales|floatformat:2 }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <h3>Pedidos</h3>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>ID Pedido</th>
+                    <th>Cliente</th>
+                    <th>Total del Pedido</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for order in orders %}
+                <tr>
+                    <td>{{ order.id }}</td>
+                    <td>{{ order.first_name }} {{ order.last_name }}</td>
+                    <td>${{ order.get_total_cost|floatformat:2 }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No se encontraron pedidos para las fechas seleccionadas.</p>
+    {% endif %}
+</body>
+</html>

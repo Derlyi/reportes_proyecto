@@ -1,0 +1,17 @@
+<!-- myshop/templates/profile.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de Usuario</title>
+</head>
+<body>
+    <h1>Perfil de Usuario</h1>
+    <p>Bienvenido a tu perfil.</p>
+    <form action="{% url 'logout' %}" method="post" style="display: inline;">
+        {% csrf_token %}
+        <button type="submit" class="dropdown-item fw-semibold" style="color: #4E50B4;">Cerrar sesión</button>
+    </form>
+</body>
+</html>

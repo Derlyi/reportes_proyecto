@@ -1,0 +1,13 @@
+<h2>Resultados para "{{ query }}"</h2>
+
+{% if results %}
+    <ul>
+    {% for product in results %}
+        <li>
+            <a href="{% url 'product_detail' product.id %}">{{ product.name }}</a> - {{ product.price }} $
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No se encontraron resultados.</p>
+{% endif %}

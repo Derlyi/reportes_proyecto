@@ -1,0 +1,92 @@
+{% extends "shop/base.html" %}
+{% load static %}
+
+{% block title %}
+{% if category %}{{ category.name }}{% else %}Productos{% endif %}
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row " style="background-color: #eef5f9;">
+        <div class="col d-flex justify-content-between ms-5">
+            <button class="btn d-flex pm-0" onclick="history.back()">
+                <img src="{% static 'img/iconos/atras.png' %}" alt="Volver" style="width: 40px; height: 40px; border: none;">
+                
+              </button>
+
+            <img src="{%static 'img/logo_v_pharma.png'%}" alt="" width="200px">
+        </div>
+        <div class="col m-auto" style="color: #4e50b4;">
+            <h1>Politicas de privacidad</h1>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container mt-5 ">
+    <div class="row">
+      <div class="col-4">
+        <nav id="navbar-example3" class="h-100 flex-column align-items-stretch pe-4 border-end">
+          <nav class="nav nav-pills flex-column">
+            <a class="nav-link" href="#item-1" style="color: #a9a9dd;">Introduccion</a>
+            <a class="nav-link" href="#item-2" style="color: #a9a9dd;">Nuestros Valores</a>
+            <a class="nav-link" href="#item-3" style="color: #a9a9dd;">Sus Derechos Sobre la informacion</a>
+            <a class="nav-link" href="#item-4" style="color: #a9a9dd;">Donde enviamos toda su informacion</a> 
+            <a class="nav-link" href="#item-5" style="color: #a9a9dd;">Como protegemos su informacion</a> 
+            <a class="nav-link" href="#item-6" style="color: #a9a9dd;">Proque procesamos su informacion</a>
+            <a class="nav-link" href="#item-7" style="color: #a9a9dd;">Cómo utilizamos las “cookies” y otras tecnologías de seguimiento</a> 
+            <a class="nav-link" href="#item-8" style="color: #a9a9dd;">Como puede Contactarnos</a>  
+          </nav>
+        </nav>
+      </div>
+    
+      <div class="col-8">
+        <div data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-smooth-scroll="true" class="scrollspy-example-2" tabindex="0">
+          <div id="item-1">
+            <h4 class="d-flex justify-content-center" style="color: #4e50b4;">Introduccion</h4>
+            <p style="color: #a9a9dd;">En nombre de V-Pharma, valoramos tu privacidad y estamos comprometidos a proteger tu información personal. Esta Política de Privacidad describe cómo recopilamos, usamos, compartimos y protegemos la información que nos proporcionas a través de nuestros servicios. <br>
+
+                Nos esforzamos por tratar tu información con el mayor respeto y en conformidad con las leyes y regulaciones aplicables en materia de privacidad y protección de datos. Al usar nuestros servicios, aceptas los términos de esta Política de Privacidad. <br>
+                
+                Te recomendamos que leas detenidamente esta política para comprender nuestras prácticas con respecto a tu información personal. Si tienes alguna pregunta o inquietud, no dudes en contactarnos. <br> 
+                </p>
+          </div>
+          <div id="item-2">
+            <h4 class="d-flex justify-content-center" style="color: #4e50b4;">Nuestra Valores</h4>
+            <p style="color: #a9a9dd;">En V-Pharma, valoramos profundamente la confianza que nuestros clientes depositan en nosotros. Nos comprometemos a mantener la privacidad y seguridad de su información personal. Creemos en la transparencia, integridad y responsabilidad en el manejo de sus datos. Nuestro objetivo es proporcionar una experiencia de compra segura y respetuosa, protegiendo siempre sus derechos y asegurando que su información se maneje de manera ética y de acuerdo con las mejores prácticas.</p>
+          </div>
+          <div id="item-3">
+            <h4 class="d-flex justify-content-center" style="color: #4e50b4;">Sus derechos sobre la informacion</h4>
+            <p style="color: #a9a9dd;">Como usuario de V-Pharma, usted tiene derechos sobre la información personal que recopilamos. Estos derechos incluyen el acceso a su información, la corrección de datos inexactos, la eliminación de información cuando ya no sea necesaria, y la oposición al tratamiento de sus datos en ciertas circunstancias. Para ejercer estos derechos, puede contactarnos a través de los canales de contacto proporcionados en nuestra política de privacidad</p>
+          </div>
+          <div id="item-4">
+            <h4 class="d-flex justify-content-center" style="color: #4e50b4;">Donde enviamos su informacion</h4>
+            <p style="color: #a9a9dd;">La información que recopilamos puede ser transferida y almacenada en servidores ubicados en diferentes regiones o países. Nos aseguramos de que cualquier transferencia de datos se realice de acuerdo con las leyes y regulaciones aplicables en materia de protección de datos, y tomamos medidas adecuadas para proteger su información durante la transferencia y almacenamiento.</p>
+          </div>
+          <div id="item-5">
+            <h4 class="d-flex justify-content-center" style="color: #4e50b4;">Como protegemos su informacion</h4>
+            <p style="color: #a9a9dd;">En V-Pharma, utilizamos medidas de seguridad técnicas y organizativas para proteger su información personal contra el acceso no autorizado, la divulgación, la alteración y la destrucción. Esto incluye el uso de tecnología de encriptación, firewalls y controles de acceso restrictivos. También revisamos regularmente nuestras prácticas de seguridad para asegurarnos de que sean adecuadas y efectivas.</p>
+          </div>
+          <div id="item-6">
+            <h4 class="d-flex justify-content-center" style="color: #4e50b4;">Porque procesamos su informacion</h4>
+            <p style="color: #a9a9dd;">Procesamos su información personal para ofrecerle una experiencia de compra eficiente y personalizada, gestionar y procesar sus pedidos, mejorar nuestros servicios y comunicarnos con usted en relación con productos, promociones y actualizaciones. Además, podemos utilizar sus datos para cumplir con obligaciones legales y proteger nuestros derechos y los de nuestros clientes.</p>
+          </div>
+          <div id="item-7">
+            <h4 class="d-flex justify-content-center" style="color: #4e50b4;">Cómo utilizamos las “cookies” y otras tecnologías de seguimiento</h4>
+            <p style="color: #a9a9dd;">V-Pharma utiliza cookies y otras tecnologías de seguimiento para mejorar su experiencia en nuestro sitio web. Las cookies nos ayudan a recordar sus preferencias, analizar el uso del sitio y proporcionar contenido y anuncios relevantes. Puede controlar el uso de cookies a través de la configuración de su navegador. Para obtener más información sobre cómo utilizamos las cookies, consulte nuestra política de cookies.</p>
+          </div>
+          <div id="item-8">
+            <h4 class="d-flex justify-content-center" style="color: #4e50b4;">Cómo puede contactarnos</h4>
+            <p style="color: #a9a9dd;">Cómo Contactarnos
+                Si tiene alguna pregunta o inquietud acerca de nuestra política de privacidad, o si necesita asistencia con respecto a la gestión de su información personal, no dude en contactarnos. Puede comunicarse con nuestro equipo de atención al cliente a través de las siguientes opciones:
+                
+                Correo Electrónico: Envíenos un mensaje a email@v-pharma.com. Nos comprometemos a responderle lo antes posible.
+                Teléfono: Llámenos al [número de teléfono]. Nuestro equipo está disponible durante el horario laboral para asistirle.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

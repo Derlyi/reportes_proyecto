@@ -1,0 +1,77 @@
+{% extends "shop/base.html" %}
+{% load static %}
+
+{% block title %}
+{% if category %}{{ category.name }}{% else %}Productos{% endif %}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row " style="background-color: #eef5f9;">
+        <div class="col d-flex justify-content-between ms-5">
+            <button class="btn d-flex pm-0" onclick="history.back()">
+                <img src="{% static 'img/iconos/atras.png' %}" alt="Volver" style="width: 40px; height: 40px; border: none;">
+                
+              </button>
+
+            <img src="{%static 'img/logo_v_pharma.png'%}" alt="" width="200px">
+        </div>
+        <div class="col m-auto" style="color: #4e50b4;">
+            <h1>Conoce Quienes Somos</h1>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-5 ">
+  <div class="row">
+    <div class="col-4">
+      <nav id="navbar-example3" class="h-100 flex-column align-items-stretch pe-4 border-end">
+        <nav class="nav nav-pills flex-column">
+          <a class="nav-link" href="#item-1" style="color: #a9a9dd;">Nuestra Mision</a>
+          <a class="nav-link" href="#item-2" style="color: #a9a9dd;">Nuestra Vision</a>
+          <a class="nav-link" href="#item-3" style="color: #a9a9dd;">Nuestros Valores</a>
+          <a class="nav-link" href="#item-4" style="color: #a9a9dd;">Nuestros Equipo</a> 
+          <a class="nav-link" href="#item-5" style="color: #a9a9dd;">Nuestros Historia</a> 
+          <a class="nav-link" href="#item-6" style="color: #a9a9dd;">Contactanos</a> 
+        </nav>
+      </nav>
+    </div>
+  
+    <div class="col-8">
+      <div data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-smooth-scroll="true" class="scrollspy-example-2" tabindex="0">
+        <div id="item-1">
+          <h4 class="d-flex justify-content-center" style="color: #4e50b4;">Nuestra Misión</h4>
+          <p style="color: #a9a9dd;">Nuestra misión es proporcionar a nuestros clientes una experiencia segura y conveniente al comprar productos farmacéuticos en línea. Buscamos ser la opción preferida para aquellos que buscan productos de calidad y confianza en el ámbito de la salud</p>
+        </div>
+        <div id="item-2">
+          <h4 class="d-flex justify-content-center" style="color: #4e50b4;">Nuestra Vision</h4>
+          <p style="color: #a9a9dd;">Nuestra visión es convertirnos en la principal plataforma de venta de productos farmacéuticos en línea, brindando a nuestros clientes acceso fácil y rápido a una amplia gama de medicamentos y productos de salud, al mismo tiempo que garantizamos altos estándares de calidad y seguridad.</p>
+        </div>
+        <div id="item-3">
+          <h4 class="d-flex justify-content-center" style="color: #4e50b4;">Nuestros Valores</h4>
+          <p style="color: #a9a9dd;">Nuestros valores fundamentales son la integridad, la seguridad del cliente y la excelencia en el servicio. Nos esforzamos por operar de manera ética y transparente, y nos comprometemos a brindar productos auténticos y de calidad a nuestros clientes. Además, nos enfocamos en brindar un servicio al cliente excepcional, asegurando la satisfacción y confianza de nuestros usuarios.</p>
+        </div>
+        <div id="item-4">
+          <h4 class="d-flex justify-content-center" style="color: #4e50b4;">Nuestro Equipo</h4>
+          <p style="color: #a9a9dd;"> V-Pharma es un proyecto formativo desarrollado por un grupo de tres aprendices del programa de Tecnólogo en Análisis y Desarrollo de Software del SENA. Nuestro equipo está compuesto por jóvenes entusiastas y comprometidos con la tecnología y la salud. Cada miembro del equipo aporta sus habilidades y conocimientos en desarrollo de software, diseño web y gestión de proyectos, trabajando juntos para crear una plataforma de comercio electrónico que refleje nuestras capacidades y dedicación. A través de este proyecto, hemos aprendido y aplicado los principios del desarrollo de software en un entorno real, con el objetivo de ofrecer una experiencia de usuario óptima y eficiente.</p>
+        </div>
+        <div id="item-5">
+          <h4 class="d-flex justify-content-center" style="color: #4e50b4;">Nuestra Historia</h4>
+          <p style="color: #a9a9dd;">V-Pharma nació como parte de un proyecto formativo del Tecnólogo en Análisis y Desarrollo de Software del SENA. Este proyecto es el resultado del esfuerzo y dedicación de tres aprendices que buscaban aplicar los conocimientos adquiridos en el programa para crear una tienda virtual de productos farmacéuticos. Desde el inicio, nuestro objetivo ha sido construir una plataforma robusta y accesible que facilite el acceso a productos de salud y bienestar. A medida que hemos avanzado, hemos integrado nuevas funciones y mejorado la plataforma, reflejando el aprendizaje continuo y la evolución de nuestras habilidades en el campo del desarrollo de software.</p>
+        </div>
+        <div id="item-6">
+          <h4 class="d-flex justify-content-center" style="color: #4e50b4;">Contactanos</h4>
+          <p style="color: #a9a9dd;">Estamos aquí para ayudarle y responder a cualquier pregunta que pueda tener sobre nuestros productos o servicios. Si desea ponerse en contacto con nosotros, puede hacerlo de las siguientes maneras:
+
+            Correo Electrónico: Envíenos un mensaje a email@v-pharma.com. Nuestro equipo está disponible para asistirle con cualquier consulta.
+            Teléfono: Llámenos al [número de teléfono]. Estamos disponibles durante el horario laboral para resolver sus dudas y ofrecerle soporte.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

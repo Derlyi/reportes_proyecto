@@ -1,0 +1,47 @@
+{% extends "shop/base.html" %}
+{% load static %}
+
+{% block title %}
+  {{ product.name }}
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+  <div class="row" style="color: #4E50B4;">
+    <div class="col">
+      <h2><strong>{{ product.name }}</strong></h2>
+      <p class="price">Precio: ${{ product.price }}</p>
+      <p>{{ product.description|linebreaks }}</p>
+
+      <form action="{% url 'cart:cart_add' product.id %}" method="post">
+        {{ cart_product_form }}
+        {% csrf_token %}
+        <button type="submit" class="btn mt-5 fw-semibold" style="background-color: #34DD78; color: #ffff;">
+          Agregar al carrito
+        </button>
+      </form>
+
+      {% if user.is_authenticated %}
+        {% if is_favorite %}
+          <form action="{% url 'favorite:remove_from_favorites' product.id %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger mt-5">Eliminar de Favoritos</button>
+          </form>
+        {% else %}
+          <form action="{% url 'favorite:add_to_favorites' product.id %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn mt-5" style="background-color: #4E50B4;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" fill="#ffffff" class="bi bi-star" viewBox="0 0 16 16">
+                <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z"/>
+              </svg>
+            </button>
+          </form>
+        {% endif %}
+      {% endif %}
+    </div>
+    <div class="col">
+      <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}" alt="{{ product.name }}" class="img-fluid">
+    </div>
+  </div>
+</div>
+{% endblock %}
